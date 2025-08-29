@@ -2,6 +2,17 @@
 const NUM_PRODUCTS = 8;
 const STORAGE_KEY = "depotSalesManager.v1";
 
+// ✅ Fixed product names (always 8)
+const FIXED_PRODUCTS = [
+  "MC VSOP",
+  "MCB",
+  "SSW",
+  "KWB",
+  "DSPG",
+  "MC RUM",
+  "GSW",
+  "GSB",
+];
 // ✅ Fixed list of depots in exact order
 const DEPOTS = [
   "KNL",
@@ -313,7 +324,7 @@ function buildFormProducts() {
     function recalc() {
       amount.value = (toNum(cases.value) * toNum(rate.value)).toFixed(2);
       totalFromForm();
-    }
+    }    
     cases.addEventListener("input", recalc);
     rate.addEventListener("input", recalc);
     wrap.appendChild(node);
